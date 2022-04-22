@@ -1,0 +1,24 @@
+﻿<TreeView x:Class="KnToolsJp1Ajs_FromJpMon.CheckTreeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KnToolsJp1Ajs_FromJpMon"
+        mc:Ignorable="d"
+        Height="450" Width="800">
+
+    <TreeView.Resources>
+        <Style TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded,Mode=TwoWay}"/>
+        </Style>
+    </TreeView.Resources>
+    <TreeView.ItemTemplate>
+        <HierarchicalDataTemplate DataType="{x:Type local:CheckTreeSource}" ItemsSource="{Binding Children}">
+            <CheckBox Margin="1" IsChecked="{Binding IsChecked}" Click="CheckBox_Click">
+                <TextBlock Text="{Binding Text}"/>
+            </CheckBox>
+        </HierarchicalDataTemplate>
+    </TreeView.ItemTemplate>
+
+
+</TreeView>
