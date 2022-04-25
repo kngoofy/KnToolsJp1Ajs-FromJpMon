@@ -6,20 +6,22 @@
         xmlns:local="clr-namespace:KnToolsJp1Ajs_FromJpMon"
         mc:Ignorable="d"
         Icon="images\appicon.ico"
-        Title="MainWindow" Height="311.244" Width="725.506">
+        Title="MainWindow" Height="331.244" Width="725.506">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="77.333"/>
-            <RowDefinition Height="182.667"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="523.333"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="164*"/>
+            <ColumnDefinition Width="31*"/>
         </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,-0.333,0">
             <Menu DockPanel.Dock="Left" FontSize="14" FontFamily="Meiryo UI">
                 <MenuItem Header="File">
                     <MenuItem Click="OnMenuExit" Header="Exit" />
@@ -40,7 +42,7 @@
             </StackPanel>
         </GroupBox>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"  >
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="523,18,0,17.333" Height="42" Width="163"  >
             <Button Content="フォルダの指定"
                         Click="Button_Click_SelectJp1AjsBookFolder"
                         Style="{StaticResource Button}"
@@ -57,20 +59,30 @@
             </StackPanel>
         </GroupBox>
 
-        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" >
+        <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="523,48.667,0,49.333" Height="42" Width="163" >
             <Button 
                 Grid.Column="1" 
-                Content="HulftBook生成" 
+                Content="Jp1AjsBook生成" 
                 Click="Button_Click_MakeKnowServers" 
                 Style="{StaticResource Button}" 
                 />
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="-10,0,0,0">
             <Button 
                 Grid.Column="2" 
                 Content="サイト"        
                 Click="Button_Click_MakeListServers" 
                 Style="{StaticResource Button}" 
-                />
+                Width="Auto" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Right" 
+                >
+                <Button.Background>
+                    <ImageBrush ImageSource="square.jpg"/>
+                </Button.Background>
+            </Button>
+
         </StackPanel>
+
         <!--</Grid>-->
 
     </Grid>

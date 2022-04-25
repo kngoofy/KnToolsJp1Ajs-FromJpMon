@@ -8,52 +8,58 @@ using System.Threading.Tasks;
 
 namespace KnToolsJp1Ajs_FromJpMon
 {
+    /// <summary>
+    /// TreeViewのアイテム 親・子アイテムチェックボックス付きオブジェクト
+    /// </summary>
     public class CheckTreeSource : INotifyPropertyChanged
     {
-        //
+        //フィールド
         private bool _IsExpanded = true;
         private bool? _IsChecked = false;
         private string _Text = "";
         private CheckTreeSource _Parent = null;
         private ObservableCollection<CheckTreeSource> _Children = null;
 
-
+        //エクスパンドする
         public bool IsExpanded
         {
             get { return _IsExpanded; }
             set { _IsExpanded = value; OnPropertyChanged("IsExpanded"); }
         }
 
+        //チェックする
         public bool? IsChecked
         {
             get { return _IsChecked; }
             set { _IsChecked = value; OnPropertyChanged("IsChecked"); }
         }
 
+        //アイテム名 テキスト
         public string Text
         {
             get { return _Text; }
             set { _Text = value; OnPropertyChanged("Text"); }
         }
 
+        //親アイテム
         public CheckTreeSource Parent
         {
             get { return _Parent; }
             set { _Parent = value; OnPropertyChanged("Parent"); }
         }
 
+        //子アイテム
         public ObservableCollection<CheckTreeSource> Children
         {
             get { return _Children; }
             set { _Children = value; OnPropertyChanged("Childen"); }
         }
 
-
-
+        //プロパティ変更されたぞ イベントハンドラ
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// 
+        /// プロパティが変更された時
         /// </summary>
         /// <param name="name"></param>
         private void OnPropertyChanged(string name)
@@ -63,7 +69,7 @@ namespace KnToolsJp1Ajs_FromJpMon
         }
 
         /// <summary>
-        /// 
+        /// 子アイテムを追加する
         /// </summary>
         /// <param name="child"></param>
         public void Add(CheckTreeSource child)
@@ -74,7 +80,7 @@ namespace KnToolsJp1Ajs_FromJpMon
         }
 
         /// <summary>
-        /// 
+        /// 親アイテムのチェックを付ける
         /// </summary>
         public void UpdateParentStatus()
         {
@@ -108,7 +114,7 @@ namespace KnToolsJp1Ajs_FromJpMon
         }
 
         /// <summary>
-        /// 
+        /// 子アイテムのチェックを付ける
         /// </summary>
         public void UpdateChildStatus()
         {

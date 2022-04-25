@@ -114,14 +114,15 @@ namespace KnToolsJp1Ajs_FromJpMon
             if ((bool)Server2.IsChecked) { list.AddNewServer(Server2.Content.ToString()); }
             if ((bool)Server3.IsChecked) { list.AddNewServer(Server3.Content.ToString()); }
 
-            string book = "";
+            string dir = Jp1AjsBookFolder.Text;
+            Debug.WriteLine("Directory:" + dir);
+            
             foreach (var server in list.SeverList)
             {
-                book = Jp1AjsBookFolder.Text + "\\" + server + ".xlsx";
-
-                //var makeSheet = new CreateNewTemplateBook(book);
-
-                Debug.WriteLine(book);
+                //Server AJS名を取る
+                Debug.WriteLine("Server:"+server);
+                //Jp1AjsBookを作成する
+                ;
             }
 
             ;
@@ -138,6 +139,6 @@ namespace KnToolsJp1Ajs_FromJpMon
 
         }
 
-        
+
     }
 }

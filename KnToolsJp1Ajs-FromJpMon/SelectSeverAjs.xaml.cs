@@ -27,11 +27,14 @@ namespace KnToolsJp1Ajs_FromJpMon
         //{
         //    InitializeComponent();
         //}
-
-        public SelectSeverAjs()
+        
+        /// <summary>
+        /// 初期コンポーネント
+        /// </summary>
+        /// <param name="dir"></param>
+        public SelectSeverAjs(string dir=@"c:\temp")
         {
             InitializeComponent();
-
 
         }
 
@@ -43,6 +46,11 @@ namespace KnToolsJp1Ajs_FromJpMon
             Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_UpdateList(object sender, RoutedEventArgs e)
         {
 
@@ -50,7 +58,7 @@ namespace KnToolsJp1Ajs_FromJpMon
             var item1 = new CheckTreeSource() { Text = "Server1", IsExpanded = true, IsChecked = false };
             var item11 = new CheckTreeSource() { Text = "ajsServer-1-1", IsExpanded = false, IsChecked = false };
             var item12 = new CheckTreeSource() { Text = "ajsServer-1-2", IsExpanded = false, IsChecked = false };
-            var item2 = new CheckTreeSource() { Text = "Server2", IsExpanded = false, IsChecked = false };
+            var item2 = new CheckTreeSource() { Text = "Server2", IsExpanded = true, IsChecked = false };
             var item21 = new CheckTreeSource() { Text = "ajsServer-2-1", IsExpanded = false, IsChecked = false };
             var item22 = new CheckTreeSource() { Text = "ajsServer-2-2", IsExpanded = false, IsChecked = false };
             TreeRoot.Add(item1);
@@ -60,11 +68,21 @@ namespace KnToolsJp1Ajs_FromJpMon
             item2.Add(item21);
             item2.Add(item22);
 
+            //AJSサーバを取得
+
+            //  AJSの定義を取得
+            //  データ積み込み
+
             DataContext = this;
 
             ;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_CreateBook(object sender, RoutedEventArgs e)
         {
 

@@ -19,11 +19,17 @@ namespace KnToolsJp1Ajs_FromJpMon
     /// </summary>
     public partial class CheckTreeView : TreeView
     {
+        /// <summary>
+        /// CheckTreeViewクラスの初期コンポーネント
+        /// </summary>
         public CheckTreeView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// TreeViewのチェックボックスをチェックした時
+        /// </summary>
         private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
             var checkBox = (CheckBox)sender;
